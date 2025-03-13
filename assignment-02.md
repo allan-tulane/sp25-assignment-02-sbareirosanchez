@@ -15,7 +15,7 @@ and push to your github repository.
 Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=2W(n/3)+1$
-.  
+.  W(n) = O(n^log3^2)
 .  
 . 
 .  
@@ -24,7 +24,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 . 
  
 * $W(n)=5W(n/4)+n$
-.  
+.  W(n)=O(n^log4^5)
 .
 .  
 . 
@@ -35,7 +35,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 . 
 
 * $W(n)=7W(n/7)+n$
-.  
+.  W(n)=O(nlogn)
 . 
 .  
 .  
@@ -44,7 +44,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .
 
 * $W(n)=9W(n/3)+n^2$
-.  
+.  W(n)=O(n^2 logn)
 .
 . 
 .  
@@ -55,7 +55,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .
 
 * $W(n)=8W(n/2)+n^3$
-.  
+.  W(n)=O(n^3 logn)
 .
 .  
 .  
