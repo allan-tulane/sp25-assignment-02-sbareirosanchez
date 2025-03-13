@@ -98,7 +98,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 . 
 
 * $W(n)=W(\sqrt{n})+1$
-.  **O(log logn)
+.  **O(log logn)**
 .  
 .  
 .  
@@ -128,7 +128,7 @@ Suppose that for a given task you are choosing between the following three algor
     Which algorithm would you choose?
 
 
-.  
+.  **Algorithm A= O(n^2.32), Algorithm B= O(2^n), Algorithm C= O(n^2 logn). Algorithm B is the worst choice since its exponential time complexity is infeasible for large n. Algortihm A is worse than Algorithm C because O(n^2.32) grows faster than O(n^2 logn). Algorithm C is the best choice since it has the lowest asymptotic complexity.**
 .  
 .  
 .  
