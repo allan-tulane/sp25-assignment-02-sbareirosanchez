@@ -15,13 +15,11 @@ and push to your github repository.
 Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=2W(n/3)+1$
+
+
 .  W(n) = O(n^log3^2)
-.  
-. 
-.  
-. 
-.  
-. 
+
+
  
 * $W(n)=5W(n/4)+n$
 .  W(n)=O(n^log4^5)
