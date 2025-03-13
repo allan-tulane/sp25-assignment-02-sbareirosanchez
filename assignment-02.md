@@ -68,7 +68,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 
 * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  
+.  **O(n^3/2 logn)**
 .  
 . 
 .  
@@ -78,7 +78,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 
 * $W(n)=W(n-1)+2$
-.  
+.  **O(n)**
 .  
 . 
 .  
@@ -88,7 +88,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 
 * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  
+.  **O(n^c+1)**
 .  
 .  
 .  
@@ -98,7 +98,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 . 
 
 * $W(n)=W(\sqrt{n})+1$
-.  
+.  **O(log logn)
 .  
 .  
 .  
