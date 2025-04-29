@@ -7,7 +7,7 @@ in practice. As with previous
 assignments, some of of your answers will go in `main.py` and `test_main.py`. You
 should feel free to edit this file with your answers; for handwritten
 work please scan your work and submit a PDF titled `assignment-02.pdf`
-and push to your github repository.
+and push to your github repository. 
 
 
 ## Part 1. Asymptotic Analysis
