@@ -5,6 +5,13 @@ See assignment-02.md for details.
 from collections import defaultdict
 import math
 
+## helper function 
+def iterate (f,x,a):
+    if len(a) == 0:
+        return x
+    else:
+        return iterate (f,f(x,a[0]), a[1:])
+                    
 #### Iterative solution
 def parens_match_iterative(mylist):
     """
@@ -46,9 +53,8 @@ def parens_update(current_output, next_input):
         return current_output + 1
     elif next_input == ')':          # new close parens
         if current_output <= 0:      # close before an open -> invalid
-            return -math.inf
-        else:                        # valid
-            return current_output - 1
+            return -math.inf                       # valid
+        return current_output - 1
     else:                            # ignore non-parens input
         return current_output
     ###
@@ -79,7 +85,6 @@ def parens_match_scan(mylist):
     ###TODO
     history, last = scan(plus, 0, list(map(paren_map, mylist)))
     return last == 0 and reduce(min_f, 0, history) >= 0
-    ###
 
 def scan(f, id_, a):
     """
@@ -92,6 +97,19 @@ def scan(f, id_, a):
             [reduce(f, id_, a[:i+1]) for i in range(len(a))],
              reduce(f, id_, a)
            )
+
+def plus(x,y):
+    return x+y
+    
+def reduce(f, id_, a):
+    if len(a) == 0: 
+        return id_
+    elif len(a) == 1: 
+        return a[0]
+    else: 
+        return f(reduce(f, id_, a[:len(a)//2]), 
+                 reduce(f, id_, a[len(a)//2:]))
+    
 
 def paren_map(x):
     """
@@ -151,7 +169,7 @@ def parens_match_dc_helper(mylist):
     ###TODO
     # Base cases
     if len(mylist) == 0:
-        return [0,0]
+        return (0,0)
     elif len(mylist) == 1:
         if mylist[0] == '(':
             return (0, 1) # one unmatched (
@@ -159,15 +177,14 @@ def parens_match_dc_helper(mylist):
             return (1, 0) # one unmatched )    
         else:
             return (0, 0)
-    i,j = parens_match_dc_helper(mylist[:len(mylist)//2])
-    k,l = parens_match_dc_helper(mylist[len(mylist)//2:])
-    # Combination:
-    # Return the tuple (R,L) using some combination of the values i,j,k,l defined above.
-    # This should be done in constant time.
-    if j > k:
-        return (i, l + j - k)
-    else:
-        return (i + k - j, l)
-    ###
+    else: 
+        mid=len(mylist) //2 
+        (right1, left1) = parens_match_dc_helper(mylist[:mid])
+        (right2, left2) = parens_match_dc_helper(mylist[mid:])
+
+        if left1 > right2: 
+            return (right1, left2 + left1 - right2)
+        else:
+            return (right1 + right2 - left1, left2)
     
 
